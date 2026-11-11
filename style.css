@@ -87,8 +87,6 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .workbench-preview button { cursor: pointer; font: inherit; }
 .demo-result:not(:empty) { margin-top: .65rem; padding: .65rem; border-radius: 7px; background: white; font-size: .875rem; }
 .skill-outline { width: 100%; margin-bottom: .75rem; padding: .75rem; border-radius: 8px; background: #edf2fa; }
-.skill-outline ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem .75rem; margin: 0; padding-left: 1.2rem; font-size: .85rem; line-height: 1.5; }
-.skill-outline li::marker { color: #004f9e; }
 .training p { margin-bottom: 0; }
 .text-link { color: #005bbb; text-decoration: underline; text-underline-offset: .2em; }
 #skill-prompt {
@@ -189,3 +187,25 @@ dialog .button { display: flex; }
 .report-sample .skill-outline p + h4 { margin-top: .85rem; }
 .report-sample .skill-outline { margin-bottom: 0; }
 .report-sample .skill-outline p:last-child { margin-bottom: 0; }
+
+.chapter-list ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: chapter;
+}
+.chapter-list li {
+  display: flex;
+  align-items: baseline;
+  gap: .35rem;
+  padding: .55rem .65rem;
+  border-radius: 7px;
+  background: white;
+  font-size: .85rem;
+  line-height: 1.5;
+  counter-increment: chapter;
+}
+.chapter-list li::before { content: counter(chapter) "."; color: #004f9e; }
