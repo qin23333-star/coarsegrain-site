@@ -119,8 +119,6 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .timeline li { display: grid; grid-template-columns: 7.3rem 1fr; gap: .4rem 1rem; padding: 1.1rem 0; border-top: 1px solid var(--line); }
 .timeline h4 { margin: 0 0 .35rem; }
 .timeline p + p { margin-top: .55rem; }
-.career-detail summary { cursor: pointer; color: #005bbb; margin-top: .35rem; padding-block: .2rem; width: fit-content; font-size: .9rem; }
-.career-detail[open] summary { margin-bottom: .4rem; }
 .education { display: flex; align-items: center; gap: .75rem; }
 .education img { flex: none; border-radius: 50%; }
 .phase { color: #005bbb; font-weight: 700; font-size: .9rem; }
