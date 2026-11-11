@@ -169,5 +169,9 @@ dialog .button { display: flex; }
 .video-cover img { display: block; width: 100%; height: auto; border-radius: 8px; }
 
 .hero-scene img { object-position: center 72%; }
-.architecture-figure { width: 100%; margin: 0 0 .75rem; }
-.architecture-figure img { display: block; width: 100%; height: auto; }
+.architecture-figure { width: 100%; margin: 0 0 .75rem; padding: .85rem; border-radius: 8px; background: #edf2fa; }
+.architecture-figure h4 { margin: 0 0 .65rem; font-size: 1rem; }
+.architecture-figure dl { display: grid; gap: .45rem; margin: 0; }
+.architecture-figure dl > div { padding: .55rem .65rem; border-radius: 7px; background: white; }
+.architecture-figure dt { font-size: .9rem; font-weight: 700; color: #004f9e; }
+.architecture-figure dd { margin: .2rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
