@@ -130,8 +130,22 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .experience-grid { display: grid; gap: clamp(28px, 4vw, 48px); }
 .experience-grid > section { min-width: 0; }
 @media (min-width: 900px) {
-  .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .experience-grid .timeline li { grid-template-columns: 6.2rem minmax(0, 1fr); }
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(28px, 4vw, 48px);
+    row-gap: 0;
+  }
+  .experience-grid > section {
+    display: grid;
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+  }
+  .experience-grid .timeline {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+  }
+  .experience-grid .timeline li { grid-template-columns: 7.3rem minmax(0, 1fr); align-content: start; }
 }
 .timeline { list-style: none; margin: 1.1rem 0 0; padding: 0; }
 .timeline li { display: grid; grid-template-columns: 7.3rem 1fr; gap: .4rem 1rem; padding: 1.1rem 0; border-top: 1px solid var(--line); }
