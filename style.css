@@ -193,3 +193,7 @@ dialog .button { display: flex; }
 .architecture-figure dl > div { padding: .55rem .65rem; border-radius: 7px; background: white; }
 .architecture-figure dt { font-size: .9rem; font-weight: 700; color: #004f9e; }
 .architecture-figure dd { margin: .2rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+
+.report-sample { margin-top: 16px; }
+.report-sample .skill-outline { margin-bottom: 0; }
+.report-sample .skill-outline p:last-child { margin-bottom: 0; }
