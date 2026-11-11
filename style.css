@@ -84,12 +84,11 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
   border-radius: 8px;
   background: #edf2fa;
 }
-.workbench-preview figcaption { color: var(--muted); font-size: .8rem; margin-bottom: 8px; }
-.workbench-preview div { display: grid; gap: 3px; padding: 8px 10px; border-radius: 7px; background: white; font-size: .9rem; }
-.workbench-preview div + div { margin-top: 6px; }
-.workbench-preview strong { color: #004f9e; font-size: .8rem; }
-.training-results { width: 100%; margin-top: auto; padding-top: .65rem; }
-.training-results summary { min-height: 44px; padding-block: .65rem; cursor: pointer; color: #005bbb; font-weight: 700; }
+.workbench-preview label { display: block; margin-bottom: .4rem; font-size: .875rem; }
+.workbench-preview select { display: block; width: 100%; min-height: 44px; margin-bottom: .65rem; padding: .4rem; border: 1px solid var(--line); border-radius: 7px; background: white; color: var(--ink); font: inherit; }
+.workbench-preview button { cursor: pointer; font: inherit; }
+.demo-result:not(:empty) { margin-top: .65rem; padding: .65rem; border-radius: 7px; background: white; font-size: .875rem; }
+.training-results { width: 100%; margin-top: .8rem; }
 .training-results dl { margin: .25rem 0 0; }
 .training-results dt { margin-top: .75rem; font-weight: 700; }
 .training-results dd { margin: .2rem 0 0; color: var(--muted); line-height: 1.65; }
@@ -99,7 +98,6 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .skill-outline li::marker { color: #004f9e; }
 .training p { margin-bottom: 0; }
 .text-link { color: #005bbb; text-decoration: underline; text-underline-offset: .2em; }
-.workbench .button { margin-top: auto; }
 .skill details { width: 100%; }
 .skill summary { cursor: pointer; padding: .65rem 0; color: #005bbb; font-weight: 700; }
 .skill textarea {
@@ -183,7 +181,9 @@ dialog .button { display: flex; }
 .research-video { width: 100%; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .research-video p { margin-bottom: .5rem; }
 
-.video-cover { display: block; width: min(100%, 180px); margin-bottom: .65rem; }
+.video-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: .4rem .65rem; align-items: start; }
+.video-feature h4 { grid-column: 1 / -1; }
+.video-cover { display: block; width: min(100%, 112px); }
 .video-cover img { display: block; width: 100%; height: auto; border-radius: 8px; }
 
 .hero-scene img { object-position: center 72%; }
