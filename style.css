@@ -98,9 +98,7 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .skill-outline li::marker { color: #004f9e; }
 .training p { margin-bottom: 0; }
 .text-link { color: #005bbb; text-decoration: underline; text-underline-offset: .2em; }
-.skill details { width: 100%; }
-.skill summary { cursor: pointer; padding: .65rem 0; color: #005bbb; font-weight: 700; }
-.skill textarea {
+#skill-prompt {
   width: 100%;
   min-width: 0;
   min-height: 9rem;
@@ -194,6 +192,10 @@ dialog .button { display: flex; }
 .architecture-figure dt { font-size: .9rem; font-weight: 700; color: #004f9e; }
 .architecture-figure dd { margin: .2rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
 
-.report-sample { margin-top: 16px; }
+.research-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.research-actions .button, .research-dialog .button { cursor: pointer; font: inherit; }
+.research-dialog { width: min(680px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: auto; }
+.report-sample > p { margin-bottom: 1rem; }
+.report-sample .skill-outline p + h4 { margin-top: .85rem; }
 .report-sample .skill-outline { margin-bottom: 0; }
 .report-sample .skill-outline p:last-child { margin-bottom: 0; }
