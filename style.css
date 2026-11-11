@@ -4,6 +4,10 @@
   --ink: #1d1d1f;
   --muted: #515154;
   --line: #d8d8dd;
+  --raised-edge: #c6ced9;
+  --raised-shadow: #d2dae5;
+  --feature-edge: #76869b;
+  --feature-shadow: #41536b;
   font-family: "Geist", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   color: var(--ink);
   background: var(--paper);
@@ -209,3 +213,25 @@ dialog .button { display: flex; }
   counter-increment: chapter;
 }
 .chapter-list li::before { content: counter(chapter) "."; color: #004f9e; }
+
+/* Solid lower edges lift the key surfaces above the page background. */
+.hero-scene {
+  border: 1px solid var(--feature-edge);
+  box-shadow: 3px 5px 0 var(--feature-shadow);
+}
+.header,
+.project {
+  border: 1px solid var(--raised-edge);
+  box-shadow: 2px 4px 0 var(--raised-shadow);
+}
+.contact {
+  box-shadow: 2px 4px 0 var(--raised-shadow);
+}
+.hero-actions .button-primary {
+  box-shadow: 2px 3px 0 #004686;
+}
+@media (max-width: 680px) {
+  .hero-scene {
+    box-shadow: 2px 4px 0 var(--feature-shadow);
+  }
+}
