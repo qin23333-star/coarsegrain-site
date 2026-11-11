@@ -99,7 +99,7 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .skill-outline li::marker { color: #004f9e; }
 .training p { margin-bottom: 0; }
 .text-link { color: #005bbb; text-decoration: underline; text-underline-offset: .2em; }
-.workbench .button, .skill details { margin-top: auto; }
+.workbench .button { margin-top: auto; }
 .skill details { width: 100%; }
 .skill summary { cursor: pointer; padding: .65rem 0; color: #005bbb; font-weight: 700; }
 .skill textarea {
@@ -160,3 +160,7 @@ dialog .button { display: flex; }
   .timeline li { grid-template-columns: 1fr; }
   .qr-button { justify-self: start; }
 }
+
+.research-work-title { margin: 0 0 .5rem; font-size: 1rem; }
+.research-video { width: 100%; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.research-video p { margin-bottom: .5rem; }
