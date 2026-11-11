@@ -6,12 +6,12 @@
   <meta name="description" content="粗粮面包的个人网站。企业 AI 培训、定制落地、家居工作台和首次覆盖报告 Skill。">
   <meta name="theme-color" content="#f5f5f7">
   <title>粗粮面包 · 企业 AI 培训与定制落地</title>
-  <link rel="stylesheet" href="style.css?v=20261111-about-cards">
+  <link rel="stylesheet" href="style.css?v=20261111-sticky-sections">
 </head>
 <body>
   <div class="nav-shell">
     <nav class="wrap site-nav" aria-label="网站导航">
-      <a href="#about" aria-current="page">关于我</a>
+      <a href="#about" aria-current="location">关于我</a>
       <a href="#work">案例和工具</a>
       <a href="#contact">微信联系</a>
     </nav>
@@ -166,35 +166,33 @@ https://github.com/qin23333-star/company-first-coverage-skill/tree/main/company-
   <script>
     const skillPrompt = document.querySelector('#skill-prompt');
     const copyStatus = document.querySelector('#copy-status');
-    const panels = [...document.querySelectorAll('main > section')];
+    const sections = [...document.querySelectorAll('main > section')];
     const tabs = [...document.querySelectorAll('.site-nav a')];
+    const nav = document.querySelector('.nav-shell');
+    const skillDetails = document.querySelector('#skill details');
 
-    function showPanel(hash) {
-      const target = hash && document.getElementById(hash.slice(1));
-      const panel = target ? panels.find(section => section.contains(target)) : panels[0];
-      const active = panel || panels[0];
-      for (const section of panels) section.hidden = section !== active;
+    function updateActiveSection() {
+      const boundary = nav.getBoundingClientRect().bottom + 16;
+      const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight;
+      const active = atBottom ? sections.at(-1) :
+        sections.findLast(section => section.getBoundingClientRect().top <= boundary) || sections[0];
       for (const tab of tabs) {
-        if (tab.hash === '#' + active.id) tab.setAttribute('aria-current', 'page');
+        if (tab.hash === '#' + active.id) tab.setAttribute('aria-current', 'location');
         else tab.removeAttribute('aria-current');
       }
-      if (hash === '#skill') document.querySelector('#skill details').open = true;
-      window.scrollTo(0, 0);
     }
 
     document.addEventListener('click', event => {
-      const link = event.target.closest('a[href^="#"]');
-      if (!link || event.defaultPrevented || event.button !== 0 ||
-          event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      if (location.hash !== link.hash) history.pushState(null, '', link.hash);
-      showPanel(link.hash);
+      if (event.target.closest('a[href="#skill"]')) skillDetails.open = true;
     });
-
-    history.scrollRestoration = 'manual';
-    window.addEventListener('hashchange', () => showPanel(location.hash));
-    window.addEventListener('popstate', () => showPanel(location.hash));
-    showPanel(location.hash);
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#skill') skillDetails.open = true;
+      updateActiveSection();
+    });
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    if (location.hash === '#skill') skillDetails.open = true;
+    updateActiveSection();
     document.querySelector('#copy-skill-prompt').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(skillPrompt.value);
