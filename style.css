@@ -38,7 +38,7 @@ h3 { font-size: 1.45rem; }
 .site-nav { display: flex; align-items: center; justify-content: center; gap: clamp(.75rem, 4vw, 3rem); }
 .site-nav a { display: grid; place-items: center; min-height: 54px; padding-inline: .2rem; border-bottom: 2px solid transparent; font-size: .94rem; }
 .site-nav a[aria-current="page"] { color: #005bbb; border-color: currentColor; font-weight: 700; }
-.site-nav a:hover, .social a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.social a:hover { text-decoration: underline; text-underline-offset: .25em; }
 .header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, .91fr);
