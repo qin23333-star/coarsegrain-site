@@ -235,3 +235,24 @@ dialog .button { display: flex; }
     box-shadow: 2px 4px 0 var(--feature-shadow);
   }
 }
+
+.wechat-case {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 16px;
+  scroll-margin-top: 72px;
+}
+.wechat-case p:last-child { margin-bottom: 0; }
+.wechat-dialogues {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.wechat-dialogues .feature-list { margin: 0; }
+@media (max-width: 820px) {
+  .wechat-case { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .wechat-dialogues { grid-template-columns: 1fr; }
+}
