@@ -74,7 +74,7 @@ h1 { font-size: clamp(2rem, 4.05vw, 3.55rem); font-weight: 750; line-height: 1.1
 .hero-actions .button-primary:hover { background: #0056ad; }
 .section { padding: 16px 0 0; }
 .contact { display: grid; align-items: center; gap: clamp(16px, 3vw, 32px); }
-.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.work-grid { display: grid; gap: clamp(20px, 4vw, 44px); }
 .project { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: clamp(18px, 2vw, 26px); border-radius: 24px; background: #ffffff; }
 .project p { margin-bottom: .7rem; }
 .training img { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; margin: 0 0 .75rem; }
@@ -236,38 +236,160 @@ dialog .button { display: flex; }
   }
 }
 
-.wechat-case { width: 100%; margin-bottom: .9rem; scroll-margin-top: 72px; }
-.wechat-case h4 { margin-bottom: .35rem; }
-.wechat-dialogues { display: grid; gap: .55rem; }
-.chat-example {
-  padding: .7rem;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #eef3f8;
+
+#work { padding-top: clamp(48px, 9vw, 108px); }
+#work > h2 { font-size: clamp(1.75rem, 3.8vw, 3.1rem); margin-bottom: .7em; }
+.work-grid > .project {
+  width: 100%;
+  align-items: center;
+  padding: clamp(24px, 6vw, 76px) clamp(16px, 6vw, 76px);
+  border-radius: clamp(18px, 3vw, 34px);
+  box-shadow: none;
 }
-.chat-example h5 {
+.work-grid > .project > h3 {
+  display: block;
+  font-size: clamp(2rem, 5.6vw, 4.35rem);
+  letter-spacing: -.045em;
+  text-align: center;
+}
+.work-grid > .project > h3 .icon { display: none; }
+.work-grid > .project > p { max-width: 39em; text-align: center; margin-bottom: 1.5rem; }
+.training img {
+  max-width: 890px;
+  aspect-ratio: 2 / 1;
+  object-position: center 43%;
+  border-radius: 18px;
+  margin-bottom: 1.4rem;
+}
+.training .feature-list, .skill .chapter-list { max-width: 890px; }
+.training .feature-list dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.work-grid > .workbench {
+  color: #f4f7fc;
+  background: #101a28;
+}
+.workbench > p, .wechat-case > p { color: #c4d1e1; }
+.wechat-case { width: 100%; text-align: center; }
+.wechat-case h4 { font-size: clamp(1.7rem, 4vw, 3rem); letter-spacing: -.035em; }
+.wechat-case > p { margin-inline: auto; max-width: 36em; }
+.phone-stage {
+  display: grid;
+  place-items: center;
+  margin: 1.3rem 0 1rem;
+  padding: clamp(14px, 4vw, 44px) 8px;
+  border: 1px solid #38485e;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at 50% 64%, #344f70, #172536 68%);
+}
+.demo-phone {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 316px);
+  height: clamp(345px, 94vw, 420px);
+  overflow: hidden;
+  color: #172539;
+  background: #eff3f7;
+  border: 6px solid #111924;
+  border-radius: 29px;
+  box-shadow: 0 0 0 1px #8293a7, 0 22px 50px #080f1b99;
+  text-align: left;
+}
+.phone-status, .phone-heading { background: #fff; }
+.phone-status {
   display: flex;
   justify-content: space-between;
-  gap: .5rem;
-  margin: 0 0 .55rem;
-  font-size: .85rem;
+  align-items: center;
+  padding: 10px 15px 3px;
+  font-size: .75rem;
+  font-weight: 700;
 }
-.chat-example time { color: var(--muted); font-weight: 400; }
-.chat-example dl { display: grid; gap: .45rem; margin: 0; }
-.chat-example dl > div { max-width: 92%; }
-.chat-example dl > div:last-child { justify-self: end; }
-.chat-example dt { color: var(--muted); font-size: .75rem; }
-.chat-example dl > div:last-child dt { text-align: right; }
-.chat-example dd {
-  margin: .15rem 0 0;
-  padding: .4rem .55rem;
-  border-radius: 8px 8px 8px 2px;
+.phone-battery { width: 17px; height: 8px; border: 1px solid #536475; border-radius: 2px; background: #536475; box-shadow: inset 0 0 0 1px white; }
+.phone-heading { padding: .45rem .65rem .6rem; border-bottom: 1px solid #d8e1e9; text-align: center; font-weight: 700; }
+.phone-messages { display: grid; gap: 14px; padding: 19px 12px; }
+.phone-messages > div {
+  width: fit-content;
+  max-width: 92%;
+  padding: .62rem .7rem;
+  font-size: .87rem;
+  line-height: 1.55;
+}
+.phone-incoming { border-radius: 13px 13px 13px 3px; background: white; }
+.phone-outgoing { justify-self: end; border-radius: 13px 13px 3px 13px; background: #bcebd8; }
+.phone-composer {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 7px;
+  padding: 9px 9px 16px;
+  border-top: 1px solid #d8e1e9;
+  background: #e1e9f1;
+}
+.phone-draft {
+  min-height: 2.4rem;
+  padding: .45rem .5rem;
+  border: 1px solid #c6d4e1;
+  border-radius: 8px;
   background: white;
-  font-size: .85rem;
+  font-size: .8rem;
   line-height: 1.5;
 }
-.chat-example dl > div:last-child dd {
-  border-radius: 8px 8px 2px 8px;
-  background: #d9edff;
+.phone-send { padding: .48rem .55rem; border-radius: 7px; background: #136a55; color: white; font-size: .8rem; }
+.demo-phone[data-step="ready"] .phone-incoming,
+.demo-phone[data-step]:not([data-step="done"]) .phone-outgoing { visibility: hidden; }
+.phone-pointer {
+  position: absolute;
+  z-index: 2;
+  left: 52%;
+  bottom: 106px;
+  width: 28px;
+  height: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: left .6s ease, bottom .6s ease, opacity .2s ease;
+  filter: drop-shadow(0 1px 2px #000a);
 }
-.wechat-case .chat-caption { margin: .35rem 0 0; color: var(--muted); font-size: .75rem; }
+.phone-pointer::before, .phone-pointer::after { content: ""; position: absolute; inset: 0; }
+.phone-pointer::before { background: #fff; clip-path: polygon(12% 0, 96% 57%, 61% 61%, 76% 95%, 54% 100%, 38% 68%, 13% 88%); }
+.phone-pointer::after { inset: 4px; background: #172539; clip-path: polygon(7% 0, 96% 57%, 57% 60%, 75% 100%, 55% 100%, 35% 63%, 7% 87%); }
+:is([data-step="incoming"], [data-step^="hover"], [data-step^="click"]) .phone-pointer { opacity: 1; }
+:is([data-step="hover-input"], [data-step="click-input"]) .phone-pointer { left: 24%; bottom: 11px; }
+:is([data-step="hover-send"], [data-step="click-send"]) .phone-pointer { left: calc(100% - 36px); bottom: 9px; }
+[data-step="click-input"] .phone-draft { border-color: #246dc2; box-shadow: 0 0 0 2px #246dc248; }
+[data-step="hover-send"] .phone-send { background: #0c5543; }
+[data-step="click-send"] .phone-send { background: #094838; transform: scale(.9); }
+.phone-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+.phone-controls button {
+  min-height: 44px;
+  padding: .48rem .85rem;
+  border: 1px solid #687d97;
+  border-radius: 999px;
+  color: #f4f7fc;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.phone-controls button[aria-pressed="true"] { background: #e5f0ff; color: #101a28; }
+.phone-controls button:focus-visible { outline-color: #a9d2ff; }
+.wechat-case .phone-caption { margin-top: .65rem; color: #c4d1e1; font-size: .85rem; }
+.manufacturing-case {
+  width: 100%;
+  margin-top: clamp(22px, 5vw, 56px);
+  padding: clamp(12px, 3vw, 22px);
+  border-radius: 18px;
+  color: #172539;
+  background: #fff;
+}
+.work-grid .skill .research-video {
+  width: min(100%, 620px);
+  margin-top: 1.5rem;
+  grid-template-columns: minmax(75px, 112px) minmax(0, 1fr);
+}
+.skill .chapter-list { margin-block: .45rem 1rem; }
+@media (max-width: 680px) {
+  .training .feature-list dl { grid-template-columns: 1fr; }
+  .training img { aspect-ratio: 4 / 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-pointer { transition: none; }
+}
