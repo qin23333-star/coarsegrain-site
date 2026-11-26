@@ -321,7 +321,8 @@ https://github.com/qin23333-star/company-first-coverage-skill/tree/main/company-
     const nav = document.querySelector('.nav-shell');
 
     function updateActiveSection() {
-      const boundary = nav.getBoundingClientRect().bottom + 16;
+      const anchorOffset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const boundary = Math.max(anchorOffset, nav.getBoundingClientRect().bottom) + 1;
       const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight;
       const active = atBottom ? sections.at(-1) :
         sections.findLast(section => section.getBoundingClientRect().top <= boundary) || sections[0];
@@ -338,7 +339,10 @@ https://github.com/qin23333-star/company-first-coverage-skill/tree/main/company-
       }
     }
 
-    window.addEventListener('hashchange', openLinkedReport);
+    window.addEventListener('hashchange', () => {
+      openLinkedReport();
+      updateActiveSection();
+    });
     window.addEventListener('scroll', updateActiveSection, { passive: true });
     window.addEventListener('resize', updateActiveSection);
     openLinkedReport();
