@@ -405,3 +405,25 @@ dialog .button { display: flex; }
 @media (prefers-reduced-motion: reduce) {
   .phone-pointer { transition: none; }
 }
+
+.enterprise-cases {
+  width: 100%;
+  margin-bottom: clamp(32px, 6vw, 64px);
+}
+.enterprise-cases > h4 {
+  margin-bottom: 14px;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+.enterprise-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+  gap: 12px;
+}
+.enterprise-case-grid > article {
+  padding: clamp(14px, 2.2vw, 22px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.enterprise-case-grid h5 { margin: 0 0 .42rem; font-size: 1rem; }
+.enterprise-case-grid p { margin: 0; font-size: .94rem; }
